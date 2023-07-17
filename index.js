@@ -27,6 +27,7 @@ const server = app.listen(process.env.PORT, (err) => {
 const io = require("socket.io")(server, {
   cors: {
     origin: "https://chat-app-client-orcin.vercel.app/",
+    methods:['GET','POST','PUT','PATCH','DELETE'],
   },
 });
 
