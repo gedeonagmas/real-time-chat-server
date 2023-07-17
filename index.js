@@ -9,9 +9,11 @@ const app = express();
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(
-  // cors({
+  cors(
+  //   {
   //   origin: "https://chat-app-client-orcin.vercel.app/",
-  // })
+  // }
+  )
 );
 app.use(express.json());
 app.use("/user", userRouter);
