@@ -1,5 +1,5 @@
 const { groupModel } = require("./../Models/groupModel");
-const { chats } = require("./../Models/chatsModel");
+const { chats } = require("./../models/chatsModel");
 const { Signup } = require("../models/signupModel");
 
 const groupCreateHandler = async (req, res) => {
