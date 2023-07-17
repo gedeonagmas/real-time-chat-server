@@ -10,7 +10,7 @@ const app = express();
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(
   cors({
-    origin: "https://vercel.com/new/success?developer-id=&external-id=&redirect-url=&branch=master&deploymentUrl=chat-app-client-ihadrthbs-gedeonagmas.vercel.app&projectName=chat-app-client&s=https%3A%2F%2Fgithub.com%2Fgedeonagmas%2Fchat-app&gitOrgLimit=&hasTrialAvailable=1&totalProjects=1",
+    origin: "https://chat-app-client-orcin.vercel.app/",
   })
 );
 app.use(express.json());
@@ -26,7 +26,7 @@ const server = app.listen(process.env.PORT, (err) => {
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: "https://vercel.com/new/success?developer-id=&external-id=&redirect-url=&branch=master&deploymentUrl=chat-app-client-ihadrthbs-gedeonagmas.vercel.app&projectName=chat-app-client&s=https%3A%2F%2Fgithub.com%2Fgedeonagmas%2Fchat-app&gitOrgLimit=&hasTrialAvailable=1&totalProjects=1",
+    origin: "https://chat-app-client-orcin.vercel.app/",
   },
 });
 
