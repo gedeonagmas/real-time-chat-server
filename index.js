@@ -10,7 +10,7 @@ const app = express();
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(
   cors({
-    origin: "http://localhost:4000",
+    origin: "https://vercel.com/new/success?developer-id=&external-id=&redirect-url=&branch=master&deploymentUrl=chat-app-client-ihadrthbs-gedeonagmas.vercel.app&projectName=chat-app-client&s=https%3A%2F%2Fgithub.com%2Fgedeonagmas%2Fchat-app&gitOrgLimit=&hasTrialAvailable=1&totalProjects=1",
   })
 );
 app.use(express.json());
@@ -26,7 +26,7 @@ const server = app.listen(process.env.PORT, (err) => {
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: "http://localhost:4000",
+    origin: "https://vercel.com/new/success?developer-id=&external-id=&redirect-url=&branch=master&deploymentUrl=chat-app-client-ihadrthbs-gedeonagmas.vercel.app&projectName=chat-app-client&s=https%3A%2F%2Fgithub.com%2Fgedeonagmas%2Fchat-app&gitOrgLimit=&hasTrialAvailable=1&totalProjects=1",
   },
 });
 
@@ -56,8 +56,6 @@ const addUser = (user, ids) => {
       return users;
     });
   }
-
-  // console.log(users, "addd");
 };
 
 const removeUser = (ids) => {
@@ -74,7 +72,6 @@ const removeUser = (ids) => {
       return false;
     }
   });
-  // console.log(users, "filterdd");
   return users;
 };
 
@@ -83,13 +80,11 @@ io.on("connection", (socket) => {
     if (user !== "") {
       addUser(user, socket.id);
       io.emit("aaa", users);
-      // console.log("###################################");
     }
   });
   socket.on("disconnect", () => {
     removeUser(socket.id);
     io.emit("aaa", users);
-    // console.log("#######################################");
   });
   socket.on("typing t", (bool, room) => {
     socket.join(room);
@@ -124,10 +119,4 @@ io.on("connection", (socket) => {
   socket.on("ff1", (val) => {
     io.emit("ff2", val);
   });
-  // socket.on("ss0", (name) => {
-  //   //const id = allUsers.filter((el) => el.name === name);
-  //   socket.join(name);
-  //   socket.to(name).emit("ss1", "############################");
-  //   console.log(name);
-  // });
 });
