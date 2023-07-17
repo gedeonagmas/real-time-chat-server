@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-require("express-async-catch");
+require("express-async-catch"); 
 require("dotenv").config();
 const path = require("path");
 const { userRouter } = require("./routs/userRoute");
@@ -11,7 +11,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(
   cors(
   //   {
-  //   origin: "https://chat-app-client-orcin.vercel.app/",
+  //   origin: "https://chat-app-client-orcin.vercel.app/",//
   // }
   )
 );
