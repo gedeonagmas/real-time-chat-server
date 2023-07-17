@@ -1,4 +1,4 @@
-const { groupModel } = require("./../Models/groupModel");
+const { groupModel } = require("./../models/groupModel");
 const { chats } = require("./../models/chatsModel");
 const { Signup } = require("../models/signupModel");
 
